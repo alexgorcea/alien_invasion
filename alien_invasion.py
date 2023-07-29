@@ -137,7 +137,7 @@ class AlienInvasion:
     def _create_fleet(self):
         alien = Alien(self)
         alien_width, alien_height = alien.rect.size
-        current_x, current_y = alien_width, alien_height
+        current_x, current_y = alien_width, 2*alien_height
 
         while current_y < (self.settings.screen_height - 4*alien_height) :
 
@@ -181,17 +181,21 @@ class AlienInvasion:
             self.bullets.empty()
             self._create_fleet()
             self.settings.increase_speed()
+            self.stats.level +=1
+            self.score.prep_level()
 
         if collisions:
             for aliens in collisions.values():
                 self.stats.score += self.settings.alien_points * len(aliens)
             self.score.prep_score()
+            self.score.check_high_score()
 
 
     def _ship_hit(self) :
         if self.stats.ships_left > 1 :
             print('Ship has been hit !!!')
             self.stats.ships_left -= 1
+            self.score.prep_ships()
 
             self.bullets.empty()
             self.aliens.empty()
@@ -216,14 +220,17 @@ class AlienInvasion:
         if self.easy_mode.rect.collidepoint(pos):
             self._start_game()
             self.settings.initialize_easy_mode()
+            self.prep_stats()
         
         elif self.normal_mode.rect.collidepoint(pos):
             self._start_game()
             self.settings.initialize_normal_mode()
+            self.prep_stats()
 
         elif self.hard_mode.rect.collidepoint(pos):
             self._start_game()
             self.settings.initialize_hard_mode()
+            self.prep_stats()
             
     def _reset_game(self):
         self.aliens.empty()
@@ -248,6 +255,11 @@ class AlienInvasion:
 
         self.hard_button_position = self.screen_rect.centerx + 500
         self.hard_mode = Button(self,'Play Hard Mode', self.hard_button_position)
+    
+    def prep_stats(self):
+        self.score.prep_level()
+        self.score.prep_score()
+        self.score.prep_ships()
 
 
 if __name__ == '__main__':
