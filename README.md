@@ -18,29 +18,21 @@ collision detection for realism in game mechanics, and game state management for
 ## File Descriptions
 
 
-# alien_invasion.py
-The main game file, responsible for initializing the game, creating a screen, and managing the event loop that keeps the game running.
+- **alien_invasion.py**: The main game file, responsible for initializing the game, creating a screen, and managing the event loop that keeps the game running.
 
-# settings.py
-Contains the `Settings` class, which stores all configurable settings for the game, including screen size, ship speed, bullet properties, and alien settings.
+- **settings.py**: Contains the `Settings` class, which stores all configurable settings for the game, including screen size, ship speed, bullet properties, and alien settings.
 
-# ship.py
-Defines the `Ship` class, representing the player's spaceship. It includes functionality for drawing the ship and updating its position.
+- **ship.py**: Defines the `Ship` class, representing the player's spaceship. It includes functionality for drawing the ship and updating its position.
 
-# bullets.py
-Implements the `Bullet` class for managing the bullets fired by the player's ship, including their speed, direction, and drawing on the screen.
+- **bullets.py**: Implements the `Bullet` class for managing the bullets fired by the player's ship, including their speed, direction, and drawing on the screen.
 
-# aliens.py
-Contains the `Alien` class, representing individual aliens in the fleet. It manages their appearance and movements.
+- **aliens.py**: Contains the `Alien` class, representing individual aliens in the fleet. It manages their appearance and movements.
 
-# game_stats.py
-Defines the `GameStats` class, tracking various game statistics such as the player's score and the number of ships remaining.
+- **game_stats.py**: Defines the `GameStats` class, tracking various game statistics such as the player's score and the number of ships remaining.
 
-# scoreboard.py
-Manages the scoreboard, displaying the player's current score, high score, and other relevant information during gameplay.
+- **scoreboard.py**: Manages the scoreboard, displaying the player's current score, high score, and other relevant information during gameplay.
 
-# start_button.py
-Implements a `Button` class for the game's start button, displayed on the game's main menu to initiate gameplay.
+- **start_button.py**: Implements a `Button` class for the game's start button, displayed on the game's main menu to initiate gameplay.
 
 
 ## How to install pygame library
