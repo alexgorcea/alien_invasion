@@ -1,4 +1,4 @@
-# Pygame Project: Alien Invasion
+# Python Pygame Project: Alien Invasion
 
 ## Overview
 Alien Invasion is an arcade-style game built with Pygame where the player controls a ship and shoots down aliens invading Earth. This project demonstrates the use of Pygame library for game development, handling user input, and managing graphical and sound elements.
